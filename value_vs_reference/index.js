@@ -42,3 +42,41 @@ myFunction([1, 2, 3]); //The memory address reference of [1,2,3] is assigned to 
 
 // Why map, filter, reduce,...etc are pure functions
 // These function make a copy of the objects (arrays) they use as arguments. That prevents the original arrays from being mutated.
+
+
+//Practice exercises
+
+//////////////////
+function changeAgeAndReference(person) {
+  person.age = 25;
+  person = {
+    name: 'John',
+    age: 50
+  };
+
+  return person;
+}
+
+var personObj1 = {
+  name: 'Alex',
+  age: 30
+};
+
+var personObj2 = changeAgeAndReference(personObj1);
+
+console.log(personObj1); // -> { name: 'Alex', age: 25 }
+console.log(personObj2); // -> { name: 'John', age: 50 }
+//////////////////
+/////////////////
+var obj = {
+  innerObj: {
+      x: 9
+  }
+};
+​
+var z = obj.innerObj;
+​
+z.x = 25;
+​
+console.log(obj.innerObj.x); // -> 25
+
