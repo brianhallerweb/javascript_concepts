@@ -51,9 +51,9 @@ myAsyncOuter()
   .then(() => myAsyncInner())
   .then(res => console.log(res));
 
-//Another example of promises. This is an asyc add function that can accomodate
+//Another example of promises. This is an slow (async) add function that can accomodate
 //any number of arguments.
-function asyncAdd() {
+function slowAdd() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let total = 0;
@@ -68,6 +68,6 @@ function asyncAdd() {
   });
 }
 
-asyncAdd(1, 2, 3, "10")
+slowAdd(1, 2, 3, "10")
   .then(res => console.log(res))
   .catch(error => console.log(error));
