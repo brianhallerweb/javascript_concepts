@@ -27,7 +27,9 @@
 //Typically, you won't be using the Promise() constructor to make new promises,
 //you will simply be using functions that return promises by chaining .then()
 //and .catch() onto their ends. However, I will show how to create and work
-//with your own promises below:
+//with your own promises below because it is possible that promises
+//(along with setTimeout) actually are used to transform a an async function
+//that takes a callback into an async function that returns a promise.
 
 //This is the same example as in callbacks.js. The idea is to call the outer
 //function and then the inner function. Doing it with promises instead of nested
@@ -51,8 +53,8 @@ myAsyncOuter()
   .then(() => myAsyncInner())
   .then(res => console.log(res));
 
-//Another example of promises. This is an slow (async) add function that can accomodate
-//any number of arguments.
+//Another example of promises. This is an slow (async) add function that can
+//accomodate any number of arguments.
 function slowAdd() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -71,3 +73,32 @@ function slowAdd() {
 slowAdd(1, 2, 3, "10")
   .then(res => console.log(res))
   .catch(error => console.log(error));
+
+//Here is an example of forcing the request() function from the request library
+//to return a promise instead of taking a callback.
+
+const request = require("request");
+
+function funFact(num) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof num !== "number") {
+        reject("Input must be a number");
+      } else {
+        request(
+          `http://numbersapi.com/${num}?json`,
+          (error, response, body) => {
+            if (error) {
+            }
+            const fact = JSON.parse(body).text;
+            resolve(fact);
+          }
+        );
+      }
+    }, 0);
+  });
+}
+
+funFact(true)
+  .then(fact => console.log(`Fun fact: ${fact}`))
+  .catch(e => console.log(e));
