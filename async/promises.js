@@ -50,3 +50,24 @@ myAsyncOuter()
   })
   .then(() => myAsyncInner())
   .then(res => console.log(res));
+
+//Another example of promises. This is an asyc add function that can accomodate
+//any number of arguments.
+function asyncAdd() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let total = 0;
+      for (let argument in arguments) {
+        if (typeof arguments[argument] !== "number") {
+          reject("At least one argument is not a number");
+        }
+        total += arguments[argument];
+      }
+      resolve(total);
+    }, 2000);
+  });
+}
+
+asyncAdd(1, 2, 3, "10")
+  .then(res => console.log(res))
+  .catch(error => console.log(error));
