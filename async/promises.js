@@ -27,9 +27,9 @@
 //Typically, you won't be using the Promise() constructor to make new promises,
 //you will simply be using functions that return promises by chaining .then()
 //and .catch() onto their ends. However, I will show how to create and work
-//with your own promises below because it is possible that promises
-//(along with setTimeout) actually are used to transform a an async function
-//that takes a callback into an async function that returns a promise.
+//with your own promises below because I believe that promises are used to
+//transform a an async function that takes a callback into an async function
+//that returns a promise.
 
 //This is the same example as in callbacks.js. The idea is to call the outer
 //function and then the inner function. Doing it with promises instead of nested
@@ -75,30 +75,29 @@ slowAdd(1, 2, 3, "10")
   .catch(error => console.log(error));
 
 //Here is an example of forcing the request() function from the request library
-//to return a promise instead of taking a callback.
+//to return a promise instead of taking a callback. Notice that this implementation
+//doesn't require some hacky use of setTimeout(). The async part is still handled
+//by the callback in request(). It is the reject() and resolve() functions that
+//break the code free of callback hell.
 
 const request = require("request");
 
 function funFact(num) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (typeof num !== "number") {
-        reject("Input must be a number");
-      } else {
-        request(
-          `http://numbersapi.com/${num}?json`,
-          (error, response, body) => {
-            if (error) {
-            }
-            const fact = JSON.parse(body).text;
-            resolve(fact);
-          }
-        );
-      }
-    }, 0);
+    if (typeof num !== "number") {
+      reject("Input must be a number");
+    } else {
+      request(`http://numbersapi.com/${num}?json`, (error, response, body) => {
+        if (error) {
+          reject(error);
+        }
+        const fact = JSON.parse(body).text;
+        resolve(fact);
+      });
+    }
   });
 }
 
-funFact(true)
+funFact(90)
   .then(fact => console.log(`Fun fact: ${fact}`))
   .catch(e => console.log(e));
