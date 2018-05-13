@@ -10,7 +10,7 @@
 
 //- Promise objects have access to .then() and .catch() methods. They are
 //chained to the promise such that the resolved or rejected values will be
-//processes when they are available.
+//processed when they are available.
 
 //- The Promise() constructor takes a function as an argument. That function
 // must have arguments resolve() and reject(). The body of the function is
