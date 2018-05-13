@@ -54,7 +54,8 @@ myAsyncOuter()
   .then(res => console.log(res));
 
 //Another example of promises. This is an slow (async) add function that can
-//accomodate any number of arguments.
+//accomodate any number of arguments. setTimeout is necessary for the "slow"
+//behavior but also because it is what allows for asynchronicity.
 function slowAdd() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
