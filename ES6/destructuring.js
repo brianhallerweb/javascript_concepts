@@ -1,14 +1,29 @@
-// Destructuring
-// This is a very common technique that helps to make code succinct. It reduces repetition of words that is so common.
-// When you see code like:
-// const { type, amount } = expense
-// This means assign a new variable called "type" the "type" property in the "expense" object and a new variable called "amount" the "amount" property in the "expense" object
-// let dog = {
-// name: "obie"
-// };
-// let { name } = dog;
+//Destructing Objects and Arrays
 
-// you can destructure arrays too
-// const firstCompany = companies[0] is improved to const [ firstCompany ] = companies
+//Destructuring Objects
+const dog = {
+  name: "obie",
+  getName() {
+    return this.name;
+  }
+};
 
-// you can actually combine array and object descructuring with nesting, such as when you have an array of objects. You can array destructure to get access to a specific object and then object destructure to get access to a specific property.
+const { name, getName } = dog;
+//The above is identical to
+//const name = dog.name
+//const getName = dog.getName
+
+console.log(name); //obie
+console.log(breed); //doodle
+
+//Destructuring Arrays
+const numbers = ["one", 2, true];
+const [firstVariable, secondVariable, thirdVariable] = numbers;
+//The above is identical to
+// const firstVariable = numbers[0]
+// const secondVariable = numbers[1]
+// const thirdVariable = numbers[2]
+
+console.log(firstVariable); // One
+console.log(secondVariable); // 2
+console.log(thirdVariable); // true

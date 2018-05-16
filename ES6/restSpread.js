@@ -1,11 +1,20 @@
 // rest and spread operators
-// these are more syntactic sugar
 
-// the rest operator looks like this
-// ...numbers
-// when you use that as a parameter it means to take everything passed as an argument and put it all in to an array called numbers
+//The rest operator
+//When ...numbers is used as a parameter, the rest operator will take all
+//arguments and put them into an array called numbers.
+const numbersList = (...numbers) => {
+  numbers.forEach(number => console.log(number));
+};
+numbersList(1, 2, 3, 4, 5);
 
-// the spread operator looks the same as the rest operator except for it is used to flatten an array, meaning that it takes the elements out of an array
-// a good use of this is the concatenation of arrays
+//The spread operator
+//Although spread looks identical to rest, it is used in different context.
+//It flattens an array into
+const myArr = [1, 2, 3, 4, 5];
+console.log(...myArr);
 
-// in short, when you see ... it either means take a bunch of values and put them into an array or it means take a bunch of elements out of an array
+//A good use case of the spread operator is concatenating arrays.
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5];
+const fullArr = [...arr1, ...arr2];
