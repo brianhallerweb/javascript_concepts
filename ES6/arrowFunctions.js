@@ -1,3 +1,27 @@
-// arrow functions
-// the syntax is far more succinct but, more importantly, it fixes a common "this" problem
-// It is really hard to express the problem and the solution theoretically but one common place that the problem occurs is with callbacks inside array methods like map. You almost always see these functions written as fat arrows because, without fat arrows, the proper context is lost.
+// Arrow functions
+const add = (a, b) => a + b; //implicit return
+const add = (a, b) => {
+  return a + b;
+}; //explicit return
+const add = (a, b) => ({ solution: a + b }); //return an object
+
+//This binding and the arguments object
+//Arrow functions do not bind "this" or have an arguments object
+const dog = {
+  name: "obie",
+  getName: () => {
+    console.log(this.name); //undefined
+    console.log(arguments); //undefined
+  }
+};
+const dog = {
+  name: "obie",
+  getName() {
+    console.log(this.name); //Obie
+    console.log(arguments); //A defined object
+  }
+};
+
+//ES6 functions are not a replacement for ES5 functions. Mostly
+//because of "this" binding issues, ES5 and ES6 functions should
+//be used in a complementary way.
