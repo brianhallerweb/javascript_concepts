@@ -47,6 +47,9 @@ export default add;
 export const square = x => {
     return x * x;
   };
+//Notice how the add function can't have a name when using
+//export default. This is not true for classes. It is okay
+// to write export default class myClass {}
 export default (a, b) => {
     return a + b;
 };
