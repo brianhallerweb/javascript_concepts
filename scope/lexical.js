@@ -17,7 +17,7 @@ baz();
 
 /* Lexical scope
 * Lexical scope gives variables and functions permanent scope 
-* at the time of declaration. A good way to 
+* at the time of declaration (compile time). A good way to 
 * understand lexical scope is to work through the code like 
 * a complier. The Javascript  engine/interpreter/compiler is very 
 * complex but here is a simplified model. 
