@@ -5,7 +5,9 @@ const y = 1;
 let z = 1;
 
 //Differences between var and (let and const)
-//1. var variables allow for redefinition
+//1. var variables allow for redeclaration (Although I have since learned that
+//it isn't real redeclaration it just looks that way. It is simply reassignment
+//of the source to the target. Declaration only happens once during compliation.)
 var myVar1 = 1;
 var myVar2 = 2;
 //2. In the browser, var variables are put on the window object.
