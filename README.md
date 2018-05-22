@@ -1,2 +1,1 @@
-
-These are my notes on intermediate javascript concepts. 
+These are my personal notes on javascript concepts.

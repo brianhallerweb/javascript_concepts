@@ -77,7 +77,7 @@ var foo = function bar() {
 };
 
 foo();
-bar(); //This will cause a refernce error
+bar(); //This will cause a reference error
 
 //bar is not declared in the global scope, which is why line 78 will throw an error.
 //bar is declared as a function in the scope of bar. This is a somewhat strange
