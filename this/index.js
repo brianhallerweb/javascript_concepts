@@ -1,16 +1,17 @@
-//"this" is determined by function execution context. When a function is called, 2
-//special keywords are assigned to it: "this" and "arguments". There are 4 rules for
-//understanding how "this" will be assigned.
+// "this" is determined by function execution context. When a function is called, 2
+// special keywords are assigned to it: "this" and "arguments". There are 4 rules for
+// understanding how "this" will be assigned.
 
-//Rule 1: When called outside of an object, "this" is the global object (window in
-//the browser).
+// Rule 1: Implicit default binding.
+// When called outside of an object, "this" is the global object (window).
+// Strict mode changes that rule: "this" stays undefined.
 function myFunction() {
   return this;
 }
 console.log(myFunction());
 
-//Rule 2: Implicit Binding.
-//When called inside an object, "this" will be the closest parent object.
+// Rule 2: Implicit binding with a context object
+// When called inside an object, "this" will be the closest parent object.
 
 const person = {
   firstName: "Brian",
@@ -58,6 +59,22 @@ console.log(person.dog.sayHello.apply(person));
 const newSayHello = person.dog.sayHello.bind(person);
 console.log(newSayHello());
 
-//Rule 4: The "new" keyword.
-//The new keyword does a number of things but, when used with a constructor, it
-//assigns "this" to the new object that the constructor creates.
+// Rule 4: The "new" keyword.
+// The new keyword does 4 things when combined with a function to create a constructor
+// call.
+// 1. It creates an empty object within the function.
+// 2. It gives the new object a prototype object with the function assigned to the
+// prototype's constructor property.
+// 3. It assigns the new object to "this"
+// 4. It causes the function to return "this", which is the the new object.
+
+// Arrow functions and lexical "this"
+// Arrow functions do not have a "this". People sometimes misunderstand this fact that
+// they end up saying innaccurate things like arrow function have "lexical this" or
+// that they have a "hard bound this".
+// These mistakes are understandable because "this" in an arrow function is simply a
+// variable name, which means that it will follow lexical lexical scope rules for
+// finding a value for "this". Thinking about arrow functions as following "lexical
+// this" or "hard bound this" does predicts "this" behavior but it is needlessly
+// complicated because, in reality, "this" is just a variable that follows normal
+// lexical scope rules.

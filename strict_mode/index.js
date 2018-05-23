@@ -4,10 +4,23 @@
 // Using babel as a transpiler, automatically puts the code into strict mode,
 // I think.
 
-// I want to list exactly what strict mode does but I only know of 1 thing right
+// I want to list exactly what strict mode does but I only know of 2 things right
 // now
 
-//It prevents implicit global variables.
+//1. It prevents default "this" binding to the global object.
+
+"use strict";
+var foo = "bar";
+
+function baz() {
+  console.log(this.foo);
+}
+
+baz(); // type error - foo isn't a method on undefined.
+// if strict mode was off, this would point to the window object and baz
+// could console log "bar"
+
+//2. It prevents implicit global variables.
 
 function foo() {
   bar = 1;
