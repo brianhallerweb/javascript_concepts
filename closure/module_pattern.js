@@ -28,7 +28,8 @@ var foo = (function() {
 foo.bar();
 
 // This is a variant of the classic module pattern that allows access to the public API from
-// within the module.
+// within the module. I believe this would be considered a "revealing module" because it
+// reveals methods that would otherwise be private.
 var foo = (function() {
   var publicAPI = {
     bar: function() {
