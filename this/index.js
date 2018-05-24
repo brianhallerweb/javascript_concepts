@@ -78,3 +78,12 @@ console.log(newSayHello());
 // this" or "hard bound this" does predicts "this" behavior but it is needlessly
 // complicated because, in reality, "this" is just a variable that follows normal
 // lexical scope rules.
+
+// Predictability vs flexibility
+// You could say that javascript has 2 systems to determine context - one flexible
+// and one predicatble. "this" is flexible and lexical scope is predictable. Javascript
+// is unusual in offering both system and it gives javascript broad applicability.
+// Notice that the dynamic flexibility of "this" is necessary for code sharing benefits
+// of protypical inheritance. Also, if you are writing code that doesn't need the
+// flexibility of "this" and you are forcing more predictability with a lot of
+// explicit binding, it may be better to control context with lexical scope.
