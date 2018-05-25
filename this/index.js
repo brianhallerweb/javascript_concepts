@@ -71,7 +71,7 @@ console.log(newSayHello());
 // Arrow functions and lexical "this"
 // Arrow functions do not have a "this". People sometimes misunderstand this fact that
 // they end up saying innaccurate things like arrow function have "lexical this" or
-// that they have a "hard bound this".
+// that they have a "hard-bound this".
 // These mistakes are understandable because "this" in an arrow function is simply a
 // variable name, which means that it will follow lexical lexical scope rules for
 // finding a value for "this". Thinking about arrow functions as following "lexical
@@ -82,7 +82,7 @@ console.log(newSayHello());
 // Predictability vs flexibility
 // You could say that javascript has 2 systems to determine context - one flexible
 // and one predicatble. "this" is flexible and lexical scope is predictable. Javascript
-// is unusual in offering both system and it gives javascript broad applicability.
+// is unusual in offering both systems and it gives javascript broad applicability.
 // Notice that the dynamic flexibility of "this" is necessary for code sharing benefits
 // of protypical inheritance. Also, if you are writing code that doesn't need the
 // flexibility of "this" and you are forcing more predictability with a lot of
