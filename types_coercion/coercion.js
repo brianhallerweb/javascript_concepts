@@ -100,7 +100,7 @@ if (bar) {
 
 // Double equals
 // It is commonly said that double equals evaluates value while triple equals evaluates value and
-// type. This statement is simply false and proof comes straight from the spec.
+// type. This statement is simply false and proof comes straight from the ECMAScript spec.
 // The correct statement that while they both test equality, double equals allows type coercion and
 // triple equals doesn't. //Double equals follows understandable rules
 //1. if both values are the same type, check for strict equality with ===
