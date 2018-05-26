@@ -48,6 +48,18 @@ foo.bar();
 // Singeton because it is limited to creating a single module. If a module is written as a
 // function that can be repeatedly called, it is called a Module Factory Function.
 
+// CommonJS modules
+// A major weakness of Crockford style modules is that they don't manage their own dependencies.
+// If one module is dependent on another, it must simply trust that its dependency will also be
+// available in the global name space. CommonJS is a solution to that problem. Although I don't
+// really understand the details, it is built off of the ability of the Function native function
+// to take string arguments that are translated into the arguments and body of a returned
+// function. I don't think that sentence was very clear so just remember that each CommonJS
+// module is wrapped in a function that comes from Function. That is what allows for the
+// requiring and exporting to work the way it does. The benefit of CommonJS is that each module
+// manages its own dependencies and each module keeps those dependencies within its own scope.
+// The dependencies remain the private business of each module.
+
 // ES6 Modules
 // It is good to think of ES6 modules as native module support. It allows each file to be
 // treated as a private module. What is made public (exported) must be explicitly declared.
