@@ -79,7 +79,8 @@ var foo = function bar() {
 foo();
 bar(); //This will cause a reference error
 
-//bar is not declared in the global scope, which is why line 78 will throw an error.
+//bar is not declared in the global scope, which is why line it will throw an error
+//when called in the global scope.
 //bar is declared as a function in the scope of bar. This is a somewhat strange
 //rule but it is important reliable self reference for techniques like recursion. That
 //is why named function expressions are prefferable over anonymous function
@@ -91,7 +92,7 @@ try {
 } catch (err) {}
 // Although there is no keyword, err is block scoped to the catch clause.
 
-// An example showing a type error. This is a good reason prefer
+// An example showing a type error. This is a good reason to prefer
 // function declarations over function expressions.
 /*1*/ function b() {
   /*2*/ return c;
