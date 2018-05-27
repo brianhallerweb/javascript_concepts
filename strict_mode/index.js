@@ -4,7 +4,7 @@
 // Using babel as a transpiler, automatically puts the code into strict mode,
 // I think.
 
-// I want to list exactly what strict mode does but I only know of 2 things right
+// I want to list exactly what strict mode does but I only know of 3 things right
 // now
 
 //1. It prevents default "this" binding to the global object.
@@ -43,3 +43,5 @@ bar; // 1
 // 5. foo() has a value of 1
 // 7. Does bar(rhs) exist? Yes, because it was implicitly created as a global on
 // line 2. Its value is 1.
+
+//3. It prevents duplicate parameters from being allowed in functions declarations.
