@@ -114,3 +114,7 @@ th1(function(text) {
 // have to wait for request1 to respond, and request3 didn't have to wait for request2
 // to respond. The problem was effectively broken up into 2 clean steps. First go get
 // all the data. Then, ASAP, start logging the data in order.
+
+// Notice how the ordering is achieved. It looks very similar to chaining with promises,
+// except for it is obviously using callbacks. That is a clue to why thunks could be
+// described as a precursor to promises...
