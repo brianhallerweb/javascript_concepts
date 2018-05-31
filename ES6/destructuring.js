@@ -16,6 +16,10 @@ const { name, getName } = dog;
 console.log(name); //obie
 console.log(breed); //doodle
 
+//Destructering also supports renaming variables and default values.
+//Below, name is renamed to dogName and Poppy is set as its default.
+const { name: dogName = "Poppy" } = dog;
+
 //Destructuring Arrays
 const numbers = ["one", 2, true];
 const [firstVariable, secondVariable, thirdVariable] = numbers;
