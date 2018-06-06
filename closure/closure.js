@@ -1,12 +1,10 @@
 // Closure is a characteristic of a function that allows it to have access to variables in its
-// lexical scope, even when it is called outside of that scope. Notice that it is inaccurate to
-// say that a funciton is a closure or a closure is a function - closure is a characteristic of
-// a function. So, the correct way of speaking is to say that a function has closure.
+// lexical scope, even when it is called outside of that scope.
 
 // The word closure comes from functions "closing over" variables in their scope. When those
 // functions are called outside of that scope, they retain access to that "closed over" scope.
 
-// Closure is a nearly inevitable consequence of 2 features of javascript - lexical scope and
+// Closure is a consequence of 2 features of javascript - lexical scope and
 // functions being first class citizens. These 2 features result in closure because lexical
 // scope allows functions to access their parent scopes and first class status allows function
 // to be passed to other functions as arguments and to be returned from functions.
