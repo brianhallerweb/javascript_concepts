@@ -4,7 +4,7 @@ The js engine can be simplified into two phases: Creation and execution.
 
 #### Creation
 
-The major role of the creation phase is declaring variables and functions. This is also the time when lexical scope is determined. Lexical scope is determined. Lexical means "about the words." In js, lexical scope refers to the availability of variables and functions. That availability is determined by the physical location of the code on the page.
+The major role of the creation phase is declaring variables and functions. This is also the time when lexical scope is determined. Lexical means "about the words." In js, lexical scope refers to the availability of variables and functions. That availability is determined by the physical location of the code on the page.
 
 #### Execution
 
@@ -14,13 +14,13 @@ When a program begins, a global execution environment is created and pushed onto
 var foo = "bar";
 
 function bar() {
-var foo = "baz";
+  var foo = "baz";
 
-function baz(foo) {
-foo = "bam";
-bam = "yay";
-}
-baz();
+  function baz(foo) {
+    foo = "bam";
+    bam = "yay";
+  }
+  baz();
 }
 
 bar();
