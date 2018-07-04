@@ -10,7 +10,7 @@ The major role of the creation phase is declaring variables and functions. This 
 
 When a program begins, a global execution environment is created and pushed onto the call stack. Whenever functions within that program are invoked, new execution contexts are created and pushed onto the stack. Those contexts include a this keyword, an arguments object, the declared variables and function names within its lexical scope, and a reference to it's outer environment. Execution of the code within each execution context procedes line by line, often assigning values to variables or invoking functions (causing another execution enviroment to be created and pushed onto the call stack...). When each invoked function returns, its execution context is popped off the stack and code within the execution context below begins to execute. A program finishes when the global execution environment is finally popped off the stack.
 
-'''
+```
 var foo = "bar";
 
 function bar() {
@@ -27,7 +27,7 @@ bar();
 foo;
 bam;
 baz();
-'''
+```
 
 #### Creation
 
