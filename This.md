@@ -46,19 +46,13 @@ console.log(person.dog.sayHello());//"Hi, undefined."
 #### Rule 3: Explicit Binding.
 
 There are 3 methods on functions that allow for explicit binding of "this" - call, apply, and bind.
-| Name of Method| Parameters | Invoke Immediately? |
-| ------------- |:-------------:| -----:|
-| Call | thisArg, a, b, c, d, ... | Yes |
-| Apply | thisArg, [a, b, c, d, ...] | Yes |
-| Bind | thisArg, a, b, c, d, ... | No |
 
 ```
-// ---------------------------------------------------------------------------
-// Name of Method Parameters Invoke Immediately?
-// ---------------------------------------------------------------------------
-// Call thisArg, a, b, c, d, ... Yes
-// Apply thisArg, [a, b, c, d, ...] Yes
-// Bind thisArg, a, b, c, d, ... No
+| Name of Method  | Parameters                 | Invoke Immediately? |
+| --------------- |:--------------------------:| -------------------:|
+| Call            | thisArg, a, b, c, d, ...   | Yes                 |
+| Apply           | thisArg, [a, b, c, d, ...] | Yes                 |
+| Bind            | thisArg, a, b, c, d, ...   | No                  |
 ```
 
 Call and Apply work in a nearly identical way to change "this" from dog to person. If the function sayHello took arguments, they would be passed through the additional parameter(s) of call and apply. Apply spreads out an array of arguments ([a, b, c, d, ...]) automatically whereas Call requires each argument to be passed in individually.
