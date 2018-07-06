@@ -66,7 +66,7 @@ baz();
 
 #### Function Expressions
 
-````
+```
 var foo = function bar() {
   var foo = "baz";
 
@@ -80,6 +80,7 @@ var foo = function bar() {
 foo();
 bar(); //This will cause a reference error
 ```
+
 Function expressions follow a small exception to normal scoping rules. Here, bar is declared as a function in the scope of bar. It may seem strange that a function name would reside within its own scope but it can be important in rare circumstances - like for reliable self reference in recursion.
 
 #### Let, const, block scoping and the temporal dead zone
@@ -88,4 +89,3 @@ Javascript is functionally scoped but variables declared with the let or const k
 are block scoped. These variables still exist in the variable environment in the same way as var declared variables but the engine puts additional constraints on their access. Another constaint is called the temporal dead zone, which enforces the good practice of declaring variables before their use. Sometimes people will describe the temporal dead zone by saying that let and const declared variables are not hoisted. This is a misunderstanding because no variables are ever "hoisted", they are simply declared in the creation phase and let and const variables have additional restrictions that make them unavailable before their apparent declaration on the page.
 
 Another minor example of block scoping is the error variable created in a catch clause. These have always been block scoped, which is why multiple catch clauses with the same "err" variable names do not cause collisions.
-````
