@@ -63,3 +63,8 @@ baz();
     (remember that it was implicitly created on line 8)
 9.  Does baz(rhs) exist in the global scope? No. A reference error is thrown.
     An implicit gloabal is not created because it is rhs.
+
+#### Let, block scoping and the temporal dead zone
+
+Javascript is functionally scoped but variables declared with the let or const keyword
+are block scoped. These variables still exist in the variable environment in the same way as var declared variables but the engine puts additional constraints on their access. Another constaint is called the temporal dead zone, which enforces the good practice of declaring variables before their use. Sometimes people will describe the temporal dead zone by saying that let and const declared variables are not hoisted. This is a misunderstanding because no variables are ever "hoisted", they are simply declared in the creation phase and let and const variables have additional restrictions that make them unavailable before their apparent declaration on the page.
