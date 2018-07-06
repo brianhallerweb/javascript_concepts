@@ -46,6 +46,11 @@ console.log(person.dog.sayHello());//"Hi, undefined."
 #### Rule 3: Explicit Binding.
 
 There are 3 methods on functions that allow for explicit binding of "this" - call, apply, and bind.
+| Name of Method| Parameters | Invoke Immediately? |
+| ------------- |:-------------:| -----:|
+| Call | thisArg, a, b, c, d, ... | Yes |
+| Apply | thisArg, [a, b, c, d, ...] | Yes |
+| Bind | thisArg, a, b, c, d, ... | No |
 
 ```
 // ---------------------------------------------------------------------------
