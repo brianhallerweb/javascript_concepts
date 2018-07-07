@@ -27,7 +27,7 @@ console.log(refCopy); //[1, 2]
 
 #### Comparison operators (=== and ==)
 
-These operators are only useful for value-type variables, in most cases. That is because, with reference-type variables, the comparison is made between memory addresses. Comparing 2 objects by their properties requires writing a custom function to do so.
+These operators are only useful for value-type variables, in most cases. That is because with reference-type variables the comparison is made between memory addresses. Comparing 2 objects by their properties requires writing a custom function to do so.
 
 ```
 let x = 10;
@@ -44,11 +44,12 @@ refCopy = [1];
 console.log(reference === refCopy); //false, despite both pointing to identical looking arrays, [1].
 ```
 
-// Pure Functions
-// Pure functions are functions that do not mutate variables outside of their scope.
-//Ensuring that a function is pure requires understanding the difference between
-//value-type variables and reference-type variables. When arguments are passed into
-//functions, the arguments are assigned to function parameters. For example:
+#### Pure Functions
+
+Pure functions are functions that do not mutate variables outside of their scope.
+Ensuring that a function is pure requires understanding the difference between
+value-type variables and reference-type variables. When arguments are passed into
+functions, the arguments are assigned to function parameters. For example:
 
 ```
 function myFunction(x) {}
