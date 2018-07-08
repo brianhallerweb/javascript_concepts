@@ -33,7 +33,7 @@ There are many ways to build objects. It you do not care about manipulating the 
 
 Building objects gets a lot more interesting when you want to manipulate it's prototype.
 
-##### Constuctors and the new keyword
+##### Constuctors and the new operator
 
 Constructor functions are just normal functions that are called with the new operator.
 
