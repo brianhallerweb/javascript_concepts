@@ -1,6 +1,6 @@
 ### Value-type variables vs. Reference-type variables
 
-Variables are either value-type or reference-type. Value-type variables store the variable name and value in the same location in memory. Primitives such as string, number, boolean, null, and undefined are value-type variables. Reference-type variables are objects (arrays and functions are technically objects). They store the variable name and the address of its value in the same location in memory. The actual object is stored in a different location in memory.
+Variables are either value-type or reference-type. Value-type variables store the variable name and value in the same location in memory. Primitives such as string, number, boolean, null, and undefined are value-type variables. Reference-type variables are objects (arrays and functions are objects too). They store the variable name and the address of its value in the same location in memory. The actual object is stored in a different location in memory.
 
 Example of value-type variables
 
