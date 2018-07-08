@@ -47,7 +47,7 @@ var john = new Person("john", "doe");
 
 At exection, the new keyword creates an empty object, assigns it to the this keyword, and returns the object (provided that the fuction doesn't already have an explicit return statement). The reason why firstname and lastname are put on the returned object should be obvious - the this keyword points to an empty object at the start of the function.
 
-#### The .prototype property
+#### The prototype property
 
 All functions have a prototype property but it is only used when the function is called with the new operator. It is crucial to make a distinction between the prototype property and the **proto** property. The prototype property is an object that will be the prototype of objects created by calling the function with the new operator. **proto** is the prototype of the function itself. I believe that will always be the Function Object.
 
