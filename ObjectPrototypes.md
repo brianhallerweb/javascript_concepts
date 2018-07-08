@@ -1,14 +1,4 @@
-all objects have a underscore proto
-all functions have a .prototype property and I believe it is only used when the function is called with the new keyword.
-
-the prototype chain
-isOwnproperty method
-composition with extends
-
-what new does exactly
-the part that you previously didn't understand is that this is an empty object before this.firstname runs...
-
----
+### Object Prototypes
 
 #### The prototype chain
 
