@@ -289,7 +289,7 @@ baz; //124
 
 ##### number to string
 
-Either use the String native function or the .toString method available on numbers. How does a number have a method on it? When methods are called on numbers, the numbers undergo implicit "boxing", which just means the number gets wrapped in the same object that is created when the Number native function is used with the new keyword. Don't worry too much about this detail...
+Either use the String native function or the .toString method available on numbers. How does a number have a method on it? When methods are called on numbers, the numbers undergo implicit "boxing", which just means the number gets wrapped in the same object that is created when the Number native function is used with the new keyword.
 
 ```
 var baz = 456;

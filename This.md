@@ -1,6 +1,6 @@
 ### Four rules for "this" assignment
 
-"this" is determined by function execution context. When a function is called, 2
+"this" is determined by how a function is called. When a function is invoked, 2
 special keywords are assigned to it: "this" and "arguments". There are 4 rules for
 understanding how "this" will be assigned.
 
@@ -79,6 +79,13 @@ call.
     prototype's constructor property.
 3.  It assigns the new object to "this"
 4.  It causes the function to return "this", which is the the new object.
+
+#### Precedence
+
+1.  new binding
+2.  explicit binding
+3.  implicit binding
+4.  default binding
 
 #### Arrow functions and lexical "this"
 

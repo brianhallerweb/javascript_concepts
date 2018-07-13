@@ -25,7 +25,7 @@ name.__proto__ // Number Object
 foo.toFixed(2) // "5.00"
 ```
 
-foo is a number primitive. It follows an analagous pattern to string primitives. The same pattern also exists for boolean primitives although there aren't commonly used methods on Boolean.prototype. The pattern does not hold for undefined and null primitives. They seem to be excluded from the prototype chain.
+foo is a number primitive. It follows an analagous pattern to string primitives. The same pattern also exists for boolean primitives although there aren't commonly used methods on Boolean.prototype. The pattern does not hold for undefined and null primitives. They are excluded from the prototype chain because they are never boxed (wrapped in an object).
 
 #### Building Objects
 
