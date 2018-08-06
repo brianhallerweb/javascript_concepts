@@ -2,7 +2,7 @@
 
 Closure is a characteristic of a function that allows it to have access to variables in its lexical scope, even when it is called outside of that scope. The word closure comes from functions "closing over" variables in their scope. When those functions are called outside of that scope, they retain access to that "closed over" scope.
 
-Closure arises as a consequence of 2 features of javascript - lexical scope and first class functions. Lexical scope allows functions to access their parent scopes and first class status allows functions to be passed to other functions as arguments and to be returned from functions.
+Closure arises as a consequence of 2 features of javascript - lexical scope and first class functions. Lexical scope allows functions to access their parent scopes and first class status allows functions to be passed to other functions as arguments and to be returned from functions. The reason why functions can do this is that they are just objects with callability added on. Anything objects can do, functions can do as well.
 
 Baz is a function that has closure. It closes over bar. Baz is created by foo returning a function.
 
