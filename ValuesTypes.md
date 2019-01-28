@@ -1,6 +1,6 @@
 ### Values and their types
 
-Javascript is a dynamically typed language. That means variables do not have types - only variables do. Values are assigned to variables and their types are determined during the execution phase.
+Javascript is a dynamically typed language. That means variables do not have types - only values do. Values are assigned to variables and their types are determined during the execution phase.
 
 #### 7 Types
 
